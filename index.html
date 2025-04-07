@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Yassine MATROUF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1e272e;
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1abc9c;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #1abc9c;
+        }
+        
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .about-content {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-item i {
+            margin-right: 10px;
+            color: #1abc9c;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: #2d3436;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        
+        .badge {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .internships {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .internship-card {
+            background-color: #2d3436;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .skills-box {
+            background-color: #2d3436;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .skills-box h3 {
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .skills-box h4 {
+            margin: 15px 0 10px;
+            color: #ecf0f1;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .skill-item {
+            background-color: rgba(26, 188, 156, 0.1);
+            color: #1abc9c;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .image-caption {
+            color: #3498db;
+            font-style: italic;
+            margin-top: 5px;
+            text-align: center;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .feature-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .internship-image {
+            margin-top: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .internship-screenshot {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+        }
+        
+        .project-links .btn {
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+        
+        .hero-contact {
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        
+        .hero-contact .contact-item {
+            margin-bottom: 5px;
+        }
+        
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 20px 20px;
+        }
+        
+        .project-screenshot {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">YM</div>
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#internships">Stages</a></li>
+                <li><a href="#skills">Compétences</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Yassine MATROUF</h1>
+                <p>Développeur Full Stack | Étudiant en BTS SIO</p>
+                <div class="contact-info hero-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>19 rue du Lunain 94230 - Cachan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>06 43 30 48 19</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ymatrou94@gmail.com</span>
+                    </div>
+                </div>
+                <a href="YassineMatrouf.pdf" class="btn" target="_blank">Voir mon CV</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <p>Actuellement en 2ème année de BTS SIO (SLAM), je suis passionné par l'informatique et plus précisément le développement.</p>
+                <p>Mon parcours académique m'a permis d'acquérir de solides bases en informatique, et de réaliser plusieurs projets que ce soit des applications web comme des applications client lourd. J'ai pu expérimenté plusieurs langage de code et quelques frameworks qui aujourdhui me permettent d'etre complet dans le domaine de la programmation.</p>
+                <p>Durant mes années d'études, j'ai pu effectuer plusieurs stages qui m'ont permis d'acquérir de l'expérience grâce à des projets en équipe mais aussi des tâches individuelles.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Jeu de voiture en interface 2D</h3>
+                        <p>Création d'un jeu en Python où le principe est d'esquiver des obstacles afin d'augmenter son score. Le jeu comprend une interface graphique avec une voiture contrôlable et des obstacles aléatoires.</p>
+                        <div class="tech-badges">
+                            <span class="badge">Python</span>
+                            <span class="badge">Tkinter</span>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="voiture1.png" alt="Jeu de voiture en Python - Capture d'écran" class="project-screenshot">
+                            <p class="image-caption">Interface du jeu avec voiture et obstacles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Gestion d'un zoo</h3>
+                        <p>Application web permettant de gérer un zoo avec affichage de la liste des animaux, modifications de leurs informations, recherche et suppression d'un animal.</p>
+                        <div class="tech-badges">
+                            <span class="badge">PHP</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">HTML/CSS</span>
+                        </div>
+                        <div class="project-links">
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="zoo1.png" alt="Interface de gestion des animaux du zoo" class="project-screenshot">
+                            <p class="image-caption">Interface de gestion des animaux</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Gestion de DVD</h3>
+                        <p>Application de gestion de collection de DVD permettant de cataloguer, rechercher et suivre les prêts de DVDs. Inclut des fonctionnalités de tri, filtrage et statistiques développées avec XAML.</p>
+                        <div class="tech-badges">
+                            <span class="badge">C#</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">XAML</span>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="dvd1.png" alt="Interface de l'application de gestion de DVD" class="project-screenshot">
+                            <p class="image-caption">Interface de l'application avec menu principal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Actualité en ligne (News API)</h3>
+                        <p>Application WPF en C# permettant aux utilisateurs connectés de consulter les actualités en ligne. Intègre un système de filtrage par catégorie, recherche par mots-clés et gestion des favoris avec sauvegarde dans une base de données MySQL.</p>
+                        <div class="tech-badges">
+                            <span class="badge">C#</span>
+                            <span class="badge">NewsAPI</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">XAML</span>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="news1.png" alt="Interface de recherche d'actualités en ligne" class="project-screenshot">
+                            <p class="image-caption">Interface de la recherche d'actualités</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Gestion de chaîne de salles de sport</h3>
+                        <p>Application client lourd développée en C# pour gérer une chaîne de salles de sport avec gestion de la base de données MySQL.</p>
+                        <div class="tech-badges">
+                            <span class="badge">C#</span>
+                            <span class="badge">MySQL</span>
+                            <span class="badge">XAML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="descriptif-sport.pdf" target="_blank" class="btn">Descriptif</a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="sport1.png" alt="Interface de gestion des salles de sport" class="project-screenshot">
+                            <p class="image-caption">Interface de gestion des salles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Gestion de site de vacances</h3>
+                        <p>Réalisation d'une application web en PHP qui gère un site de vacances. Développée en Programmation Orientée Objet avec EasyPHP et gestion de la base de données MySQL.</p>
+                        <div class="tech-badges">
+                            <span class="badge">PHP</span>
+                            <span class="badge">HTML/CSS</span>
+                            <span class="badge">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="descriptif-vacances.pdf" target="_blank" class="btn">Descriptif</a>
+                        </div>
+                    </div>
+                    <div class="project-images">
+                        <div>
+                            <img src="vacances1.png" alt="Interface de gestion des animations du centre de vacances" class="project-screenshot">
+                            <p class="image-caption">Interface de gestion des animations du centre de vacances</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="internships">
+        <div class="container">
+            <h2 class="section-title">Mes Stages</h2>
+            <div class="internships">
+                <div class="internship-card">
+                    <h3>Développeur Backend Junior</h3>
+                    <p><strong>REWORK</strong> - Décembre 2024</p>
+                    <p>Création d'une application CRM en logique MVC avec le framework Laravel. L'application comporte 3 parties principales : Client, Contacts, Opportunités. Ce projet a permis la centralisation et l'optimisation des relations entre l'entreprise et les clients.</p>
+                    <div class="tech-badges">
+                        <span class="badge">Laravel</span>
+                        <span class="badge">MySQL</span>
+                        <span class="badge">PHP</span>
+                        <span class="badge">HTML/CSS</span>
+                    </div>
+                    <div class="internship-image">
+                        <img src="rework1.png" alt="Interface du CRM REWORK développé pendant le stage" class="internship-screenshot">
+                        <p class="image-caption">Dashboard du CRM REWORK développé pendant le stage</p>
+                    </div>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>Développeur Backend Junior</h3>
+                    <p><strong>REWORK</strong> - Juin 2024</p>
+                    <p>Réalisation d'un moteur de recherche avec filtre. Programmation orientée objet en langage PHP. Apprentissage du principe MVC (Modèle-Vue-Contrôleur).</p>
+                    <div class="tech-badges">
+                        <span class="badge">PHP</span>
+                        <span class="badge">MySQL</span>
+                        <span class="badge">HTML/CSS</span>
+                    </div>
+                    <div class="internship-image">
+                        <img src="rework2.png" alt="Interface de recherche avancée du CRM REWORK" class="internship-screenshot">
+                        <p class="image-caption">Moteur de recherche avancée développé pendant le stage</p>
+                    </div>
+                </div>
+                
+                <div class="internship-card">
+                    <h3>Développeur Backend Junior</h3>
+                    <p><strong>M2MGroup</strong> - Juillet 2022</p>
+                    <p>Réalisation d'un site web pour la gestion des CV des salariés de l'entreprise. Apprentissage et application des langages PHP et Javascript. Premier contact professionnel avec le développement web.</p>
+                    <div class="tech-badges">
+                        <span class="badge">PHP</span>
+                        <span class="badge">HTML/CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">MySQL</span>
+                    </div>
+                    <div class="internship-image">
+                        <img src="m2m1.png" alt="Interface du site M2MGroup - Ressources Humaines" class="internship-screenshot">
+                        <p class="image-caption">Interface des différentes informations des clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences</h2>
+            <div class="skills-container">
+                <div class="skills-box">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">Sérieux</div>
+                        <div class="skill-item">Esprit d'équipe</div>
+                        <div class="skill-item">Rigoureux</div>
+                        <div class="skill-item">Persévérant</div>
+                    </div>
+                </div>
+                
+                <div class="skills-box">
+                    <h3>Hard Skills</h3>
+                    <h4>Backend</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">PHP</div>
+                        <div class="skill-item">JAVA</div>
+                        <div class="skill-item">C++</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">C#</div>
+                    </div>
+                    <h4>Frontend</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">HTML</div>
+                        <div class="skill-item">CSS</div>
+                        <div class="skill-item">JavaScript</div>
+                    </div>
+                    <h4>Base de données</h4>
+                    <div class="skills-list">
+                        <div class="skill-item">SQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Yassine MATROUF. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script simple pour le défilement fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
